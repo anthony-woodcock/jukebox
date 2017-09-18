@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from './components/Login'
+import Header from './components/Header'
 import './App.css';
 
 class App extends Component {
@@ -36,11 +37,19 @@ class App extends Component {
     })
   }
 
+  handleSignOut () {
+    this.state.gAuthInstance.signOut()
+
+    this.setState({
+      authenticatedUser: null
+    })
+  }
+
   render() {
     if (this.state.authenticatedUser) {
       return (
         <div className='App'>
-          You are logged in!
+            <Header onSignOut={this.handleSignOut} />
         </div>
       )
     }
