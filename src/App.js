@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar'
 import { Route } from 'react-router-dom'
 import Main from './components/Main'
 import Playlist from './components/Playlist'
+import SearchResults from './components/SearchResults'
 import './App.css';
 
 class App extends Component {
@@ -58,6 +59,7 @@ class App extends Component {
               <Sidebar />
               <Main>
                 <Route path="/playlists/:playlistId" component={Playlist} />
+                <Route path="/search/:query" component={SearchResults} />
               </Main>
             </div>
         </div>
