@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './components/Login'
 import Header from './components/Header'
+import Sidebar from './components/Sidebar'
 import './App.css';
 
 class App extends Component {
@@ -50,6 +51,9 @@ class App extends Component {
       return (
         <div className='App'>
             <Header onSignOut={this.handleSignOut} />
+            <div className="split">
+              <Sidebar />
+            </div>
         </div>
       )
     }
