@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Login from './components/Login'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
+import { Route } from 'react-router-dom'
+import Main from './components/Main'
+import Playlist from './components/Playlist'
 import './App.css';
 
 class App extends Component {
@@ -53,6 +56,9 @@ class App extends Component {
             <Header onSignOut={this.handleSignOut} />
             <div className="split">
               <Sidebar />
+              <Main>
+                <Route path="/playlists/:playlistId" component={Playlist} />
+              </Main>
             </div>
         </div>
       )
