@@ -1,9 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './Playlists.css'
 
-class Playlists extends Component {
-    render(){
-        return(<h1>Playlists</h1>)
-    }
+function Playlists (props) {
+    const playlistLinks = props.playlists.map((playlist)=>{
+        return (
+            <Link key={playlist.id} to={`/playlists/${playlist.id}`} className="playlist">
+                {playlist.snippet.title}
+            </Link>   
+        )
+    })
+
+
+    return (
+        <div className="Playlists">
+            {playlistLinks}
+        </div>
+    )
 }
 
 export default Playlists
